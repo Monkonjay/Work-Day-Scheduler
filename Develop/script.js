@@ -1,6 +1,7 @@
 var current_day = $('#currentDay');
 current_day.text(moment().format("ddd MMM Do"));
-var saveNineBtn = $('#save_nine');
+let currentTime = moment().hour();
+var saveBtn = $('#saveBtn');
 let containerEl = $('.container');
 let nineBlock = $('#9');
 
@@ -10,49 +11,37 @@ let nineBlock = $('#9');
 // $(nine).val(localStorage.getItem('9'));
 
 
-// var nine_message = localStorage.getItem('nine_message');
+var btn_message = localStorage.getItem('message');
 // $(nine).val = nine_message;
 
 
 //var save9 = $('#save9');
-console.log($('#save_nine'))
+console.log($('#saveBtn'))
 
-saveNineBtn.on('click', function() {
-    localStorage.setItem('nine_message', nine_message);
+saveBtn.on('click', function() {
+    localStorage.setItem('message', btn_message);
     console.log("I'm hit");
 });
 
-// console.log(moment().format('hA') === '7PM');
-// console.log(nineBlock.attr('data-hour'));
-// console.log(nineBlock.attr('data-hour') > moment().format('hA'));
-console.log('12PM' > moment().format('hA'));
+
+// console.log(curentTime > nineBlock.attr('data-hour'));
+
+$("textarea").each(function() {
+  if ($(this).attr('data-hour') > currentTime) {
+    $(this).addClass('future');
+  } else if ($(this).attr('data-hour') < currentTime) {
+    $(this).addClass('past');
+  } else {
+    $(this).addClass('present');
+  }
+ });
 
 
-if (nineBlock.attr('data-hour') > moment().format('hA')) {
-  nineBlock.addClass('future');
+// $("textarea").addClass('present');
 
-} else if (nineBlock.attr('data-hour') < moment().format('hA')) {
-  nineBlock.addClass('past');
-
-} else {
-  nineBlock.addClass('present');
-};
-
-
-
-// console.log(containerEl.children[0].children[0].text);
-// console.log(containerEl.children().eq(0).attr('data-pm'));
-
-// rootEl.children('ul').children().eq(6).text('O');
-
-
-// for(i = 0; i < containerEl.children().length; i++) {
-//   console.log('data-hour'[i]);
-// console.log(containerEl.children('div').children().eq(1).attr('data-hour'));
-// };
-
-
-
+// $("textarea").each(function() {
+//   console.log($(this).attr('data-hour'))
+//  })
 
 
 
@@ -75,36 +64,3 @@ if (nineBlock.attr('data-hour') > moment().format('hA')) {
 //     localStorage.setItem("count", count);
 //   }
 // });
-
-
-
-
-
-
-
-//   function getRecordScore() {
-    
-//     let initialEl = document.querySelector('#initials');
-//     // making global variable
-//     let playerScore = {
-//         initial: initialEl.value,
-//         highScore: score
-//     };
-
-//     //  get data back from local storage
-//     recordScore = JSON.parse(localStorage.getItem('playerScore'));
-//     // recordScore.push(savedScore);
-
-//     // combines data from local storage and new data 
-//     if(recordScore) {
-//         recordScore.push(playerScore);
-
-//     } else {
-//         recordScore = [playerScore];
-//     }
-//     // placed combined data back into local storage 
-//     localStorage.setItem('playerScore', JSON.stringify(recordScore));
-//     // recordScore.push(playerScore);
-//     submitBtn.classList.add('hide');
-//     renderRecordScore(recordScore);
-// }
