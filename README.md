@@ -19,7 +19,7 @@
 
 ### The challenge
 
-This app uses CSS, HTML, and Javascript to create a password based on criteria the user specifies. The user can indicate the password length, characters types, such as alphanumeric or special characters. It also handles exception to prevent user errors during prompt input.
+This is a simple calendar application that allows a user to save events for each hour of the day. This app runs in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 ### User Story
 
@@ -49,8 +49,8 @@ THEN the saved events persist
 
 ### Links
 
-- Solution URL: [Prefessional README Generator](https://github.com/Monkonjay/Password-Generator.git)
-- Live Site: [Test the Project](https://monkonjay.github.io/Password-Generator/)
+- Solution URL: [Work Day Scheduler](https://github.com/Monkonjay/Work-Day-Scheduler.git)
+- Live Site: [Test the Project](https://monkonjay.github.io/Work-Day-Scheduler/)
 
 ## My process
 
@@ -59,6 +59,7 @@ THEN the saved events persist
 - Javascript
 - CSS
 - HTML5
+- jQuery
 - Bootstrap 5
 - Moments
 
@@ -68,8 +69,8 @@ THEN the saved events persist
 I learned how to format time using moments.js.  It was exciting working with Bootstrap classes and customizing them for my particular application. 
 
 
-```Javascript
-generateBtn.addEventListener("click", writePassword);
+```moments.js
+current_day.text(moment().format("ddd MMM Do"));
 ```
 
 
@@ -77,7 +78,3 @@ generateBtn.addEventListener("click", writePassword);
 
 - Website - [Robert M Greene]( https://monkonjay.github.io/Portforlio-Page/)
 - Github - [Monkonjay](https://github.com/Monkonjay)
-
-
-
-

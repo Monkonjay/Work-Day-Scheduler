@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,22 +29,22 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-        <div class="row d-flex align-items-start">
+        <div class="row time-block">
             <div class="col-1 hour"> 9AM </div>
-            <div class="col-10"> <textarea id="9" class=""></textarea> </div>
-            <button id="#save_nine" class="col-1 saveBtn"><i class="fas fa-save"></i></button>
+            <div class="col-10 description"> <textarea id="9" class="present"></textarea> </div>
+            <button id="saveBtn" class="col-1 btn saveBtn"><i class="fas fa-save"></i></button>
         </div>
 
-        <div class="row d-flex align-items-start">
+        <div class="row time-block">
             <div class="col-1 hour"> 10AM </div>
-            <div class="col-10"> <textarea id="9" class=""></textarea> </div>
-            <button id="#save_ten" class="col-1 saveBtn"><i class="fas fa-save"></i></button>
+            <div class="col-10 description"> <textarea id="10" class="past"></textarea> </div>
+            <button id="saveBtn" class="col-1 btn saveBtn"><i class="fas fa-save"></i></button>
         </div>
 
-        <div class="row d-flex align-items-start">
+        <div class="row time-block">
             <div class="col-1 hour"> 11AM </div>
-            <div class="col-10"> <textarea id="9" class=""></textarea> </div>
-            <button id="#save_ten" class="col-1 saveBtn"><i class="fas fa-save"></i></button>
+            <div class="col-10 description"> <textarea id="11" class="future"></textarea> </div>
+            <button id="saveBtn" class="col-1 btn saveBtn"><i class="fas fa-save"></i></button>
         </div>
       </div>
 
