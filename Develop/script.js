@@ -2,17 +2,16 @@ $(function () {
   // global variables
   const current_day = $('#currentDay');
   const saveBtn = $('.saveBtn');
-  const textArea = $('.input');
- 
   
+  // format date and time using moments.js
+  current_day.text(moment().format("ddd MMM Do"));
+  const currentTime = moment().hour();
+
   const todos = $('.col-1.hour').each(() => {
     console.log($(this).text());
   });
   console.log(todos);
 
-  // format date and time using moments.js
-  current_day.text(moment().format("ddd MMM Do"));
-  const currentTime = moment().hour();
 
   // dynamically add classes to textarea to change background color
   $("textarea").each(function () {
@@ -25,46 +24,18 @@ $(function () {
     }
   });
 
-  // testing data attribute of save buttons
-  // $("#saveBtn").each(function() {
-  //   console.log($(this).attr('data-save')); 
-  // });
 
-  $(textArea).text(localStorage.getItem(10))
+  // fill text in textarea rows where localStorage has been set for that hour
   for (let i = 0; i < localStorage.length; i++) {
-    let id = localStorage.key(i)
-    console.log(id)
-    // $(this).siblings(".description").children("textarea").text(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
-    // //console.log($(this).siblings(".description").children("textarea").text());
-    // console.log(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
-    // console.log($(this).siblings(".description").children("textarea").prop('id'));
-
-  if(localStorage.key(i) === textArea.prop('id')){
-    // $(textArea).val(localStorage.getItem(10))
-    $(textArea).val(localStorage.getItem(localStorage.key(i)))
-    
-  }
-  // console.log(localStorage.key(i))
-  // console.log($(textArea).text())
-  // console.log($(localStorage.getItem(parseInt(localStorage.key(i)))))
-  // console.log(localStorage.key(i).value)
-  // console.log(localStorage.getItem('10'))
-  // console.log(localStorage.getItem(id))
+    $('#'+localStorage.key(i)).text(localStorage.getItem(localStorage.key(i)))
   }
 
-
-  // add event listener to save buttons
+  // add event listener to save buttons by looping 
   saveBtn.on('click', function () {
    for (let i = 0; i < saveBtn.length; i++) {
    localStorage.setItem($(this).siblings(".description").children("textarea").prop("id"),$(this).siblings(".description").children("textarea").val());
-     
    }
-    // const todo = $('#9').val();
-    // console.log('TODO', todo);
-    // // localStorage.setItem('todo', todo);
-    // // todo = $('#9').val;
-    // console.log("I'm hit");
+   
   });
-
 
 });

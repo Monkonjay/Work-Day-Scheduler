@@ -66,13 +66,19 @@ THEN the saved events persist
 
 ### What I learned
 
-I learned how to format time using moments.js.  It was exciting working with Bootstrap classes and customizing them for my particular application. 
+I learned how to format time using moments.js.  It was exciting working with Bootstrap classes and customizing them for my particular application. The most challenging codes had to deal with storing and retrieving the textarea content to and from local storage with jQuery loops
 
 
 ```moments.js
 current_day.text(moment().format("ddd MMM Do"));
 ```
 
+```javaScript/jQuery
+for (let i = 0; i < localStorage.length; i++) {
+    $('#'+localStorage.key(i)).text(localStorage.getItem(localStorage.key(i)))
+  }
+
+```
 
 ## Author
 
