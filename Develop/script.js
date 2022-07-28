@@ -9,6 +9,7 @@ $(function () {
     console.log($(this).text());
   });
   console.log(todos);
+
   // format date and time using moments.js
   current_day.text(moment().format("ddd MMM Do"));
   const currentTime = moment().hour();
@@ -30,27 +31,26 @@ $(function () {
   // });
 
   $(textArea).text(localStorage.getItem(10))
-for (let i = 0; i < localStorage.length; i++) {
-  let id = localStorage.key(i)
-  console.log(id)
- // $(this).siblings(".description").children("textarea").text(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
- // //console.log($(this).siblings(".description").children("textarea").text());
- // console.log(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
- // console.log($(this).siblings(".description").children("textarea").prop('id'));
+  for (let i = 0; i < localStorage.length; i++) {
+    let id = localStorage.key(i)
+    console.log(id)
+    // $(this).siblings(".description").children("textarea").text(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
+    // //console.log($(this).siblings(".description").children("textarea").text());
+    // console.log(localStorage.getItem($(this).siblings(".description").children("textarea").prop('id')));
+    // console.log($(this).siblings(".description").children("textarea").prop('id'));
 
-if(localStorage.key(i) === textArea.prop('id')){
-  $(textArea).val(localStorage.getItem(10))
-}
-console.log(localStorage.key(i))
-console.log($(textArea).text())
-console.log($(localStorage.getItem(parseInt(localStorage.key(i)))))
-console.log(localStorage.key(i).value)
-console.log(localStorage.getItem('10'))
-console.log(localStorage.getItem(id))
-
- 
-  
-}
+  if(localStorage.key(i) === textArea.prop('id')){
+    // $(textArea).val(localStorage.getItem(10))
+    $(textArea).val(localStorage.getItem(localStorage.key(i)))
+    
+  }
+  // console.log(localStorage.key(i))
+  // console.log($(textArea).text())
+  // console.log($(localStorage.getItem(parseInt(localStorage.key(i)))))
+  // console.log(localStorage.key(i).value)
+  // console.log(localStorage.getItem('10'))
+  // console.log(localStorage.getItem(id))
+  }
 
 
   // add event listener to save buttons
